@@ -1,6 +1,18 @@
 # Landing Page Project
+Landing page project is about creating a responsive webpage with Document Object Model (DOM) using HTML, CSS and javascript.
 
 ## Table of Contents
+Functions
+1. CreateNav
+2. StickyHeader
+3. smoothNavigation
+4. makeActive
+5. submitAlert
+
+EventLisener
+1. Click
+2. Scroll
+3. Submit
 
 * [Instructions](#instructions)
 
