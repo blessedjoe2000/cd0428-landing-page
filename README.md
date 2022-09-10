@@ -14,6 +14,13 @@ EventLisener
 2. Scroll
 3. Submit
 
+
+## References
+https://developer.mozilla.org/en-US/
+https://www.youtube.com/watch?v=flItyHiDm7E
+https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
+
+
 * [Instructions](#instructions)
 
 ## Instructions
