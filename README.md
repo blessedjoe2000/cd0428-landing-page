@@ -19,6 +19,7 @@ EventLisener
 https://developer.mozilla.org/en-US/
 https://www.youtube.com/watch?v=flItyHiDm7E
 https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
+https://stackoverflow.com/questions/9468153/textarea-with-horizontal-rule
 
 
 * [Instructions](#instructions)

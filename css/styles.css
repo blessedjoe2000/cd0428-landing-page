@@ -5,7 +5,7 @@
     font-family: "Mukta", "Source Sans Pro", serif;
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0; 
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -26,7 +26,7 @@ header.transparent{
     width: 100%;
     top: 0;
     border-radius: 1rem 1rem 0 0;
-    background-color: rgb(99,230,190,.2);
+    background-color: rgb(99,230,190,.6);
 }
 
 .active-link{
@@ -81,7 +81,8 @@ li{
 }
 
 .main{
-   margin-top: 2rem;
+   margin: 2rem auto;
+   max-width: 1366px;
 }
 
 .mainHeading{
@@ -91,9 +92,9 @@ li{
 
 .first-section{
     display: grid;
-    grid-template-columns: 1hr 1hr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "first-section-img-container first-section-content";
-    padding: 0 2rem;
+    grid-template-rows: auto;
 }
 
 .first-section-img-container{
@@ -102,8 +103,7 @@ li{
 
 .first-section-img{
     border-bottom-left-radius: 2rem;
-    max-width: 100%;
-    max-height: auto;
+    width: 100%;
 }
 
 .first-section-content{
@@ -118,7 +118,7 @@ li{
 
 .first-section-small-heading{
     font-size: 1.2rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 1px;
     color: #183153;
 }
 
@@ -126,7 +126,7 @@ li{
     font-size: 3rem;
     padding: 2rem 0;
     line-height: 3rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 2px;
 }
 
 .first-section-content-down{
@@ -147,12 +147,14 @@ li{
 }
 
 .svg-icon{
-    width: 4rem;
+    width: 50%;
+    width: 4rem; 
     height: 4rem;
     fill: #183153;
     background-color: rgb(99,230,190);
     border-radius: 50%;
     padding: 1rem;
+    flex-basis: 5.5rem;
 }
 
 .first-text-content{
@@ -204,7 +206,6 @@ li{
     gap: 5rem;
     border-bottom: 0.2rem solid  rgb(178, 233, 216);
     padding: 3rem 2rem;
-
 }
 
 .concept-details{
@@ -228,37 +229,42 @@ li{
 
 .happy-time{
     padding: 2rem;
-}
-
-.happy-time-img{
-    width: 100%;
-    height: auto;
-}
-
-.happy-time-div{
     display: grid;
-    grid-template-areas: "1fr 1fr";
+    grid-template-columns: "1fr";
+    grid-template-areas: "happy-time-div-one"
+                        "happy-time-div-two";
+   gap:1rem;
+}
+
+.happy-time-div-one  {
+    grid-area: happy-time-div-one;
+    display: grid;
+    grid-template-columns: "1fr 1fr";
+    grid-template-areas:"happy-time-img-one happy-time-content";
     gap: 2rem;
-    margin: 2rem 0;
+}
+
+.happy-time-img-one {
+    grid-area: happy-time-img-one;
+    width: 100%;
 }
 
 .happy-time-content{
-   border: 0.2rem solid rgb(99,230,190);
-   border-radius: 1rem;
-   text-align: center;
-   padding: 2rem;
-   
+    grid-area: happy-time-content;
+    border: 0.2rem solid rgb(99,230,190);
+    border-radius: 1rem;
+    text-align: center;   
 }
 
 .happy-time-content-text{
     font-size: 1.5rem;
     color: #183153;
-    padding: 2rem 0;
+    padding: 3rem 0 2rem 0;
 }
 
 .happy-time-context{
     color: #112A52;
-    padding: 1rem 0 2rem 0;
+    padding: 0 2rem 2rem 2rem;
 }
 
 .svg-heart{
@@ -268,11 +274,19 @@ li{
     fill: rgb(99,230,190);
 }
 
-.happy-time-content-bottom{
-    background-color: rgb(178, 233, 216);
-    padding: 2rem 3rem;
+.happy-time-div-two  {
+    grid-area: happy-time-div-two;
+    display: grid;
+    grid-template-columns: "1fr 1fr";
+    grid-template-areas:"happy-time-content-bottom happy-time-img-two";
 }
- 
+
+.happy-time-content-bottom{
+    grid-area: happy-time-content-bottom;
+    background-color: rgb(178, 233, 216);
+    padding: 2rem;
+}
+
 .happy-time-name{
     color: #112A52;
     font-weight: bold;
@@ -282,6 +296,11 @@ li{
     font-size: small;
     color: #112A52;
 }
+
+.happy-time-img-two {
+   grid-area: happy-time-img-two;
+}
+
 
 .subscribe-section{
     background-color: rgb(178, 233, 216);
@@ -398,11 +417,15 @@ textarea{
 }
 
 
-
-@media(min-width: 481px) and (max-width: 768px){
+ @media(min-width: 481px) and (max-width: 768px){
     .first-section{
-        grid-template-areas: "first-section-img first-section-content";
-        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "first-section-img-container first-section-content";
+        grid-template-rows: auto;
+    }
+
+    .first-section-img-container {
+        grid-area: first-section-img-container;
     }
 
     .first-section-content{
@@ -411,24 +434,23 @@ textarea{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 0 0 1rem 0rem;
     }
 
     .first-section-small-heading{
         font-size: 0.8rem;
-        letter-spacing: normal;
     }
 
     .first-section-content-up{
         font-size: 2rem;
-        padding: 1rem 0;
-        line-height: 2.5rem;
-        letter-spacing: normal;
+        padding: 0.5rem 0;
+        line-height: 1.8rem;
     }
 
     .first-section-content-down{
-        line-height: normal;
+        line-height: 1.2rem;
+        font-size: 0.8rem;
     }
 
     .first-content{
@@ -436,6 +458,10 @@ textarea{
         align-items: center;
         text-align: center;
         padding: 0;
+    }
+
+    .svg-icon{
+        flex-basis: 4rem;
     }
 
     .concept-heading{
@@ -448,22 +474,80 @@ textarea{
         gap: 1rem;
     }
 
-    .happy-time-content{
-        padding: 0 2rem;
-     }
-     .happy-time-content-text{
-        padding: 1rem 0;
+    .happy-time{
+        display: grid;
+        grid-template-columns: "1fr";
+        grid-template-areas: "happy-time-div-one"
+                            "happy-time-div-two";
+        gap: 1rem;
     }
+
+    .happy-time-div-one  {
+        grid-area: happy-time-div-one;
+        grid-template-columns: "1fr 1fr";
+        grid-template-areas:"happy-time-img-one happy-time-content";
+        width: 100%;
+    }
+    
+    .happy-time-img-one {
+        grid-area: happy-time-img-one;
+        width: 100%;
+    }
+
+    .happy-time-content{
+        grid-area: happy-time-content;
+        width: 100%;
+    }
+
+    .happy-time-content-text{
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+
     .happy-time-context{
         color: #112A52;
         padding: 0 0 0.5rem 0;
+        line-height: 1.2rem;
+        font-size: 0.8rem;
     }
+
+    .happy-time-explore{
+        font-size: 0.8rem;
+    }
+
     .svg-heart{
-        padding: 0.5rem;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .happy-time-div-two{
+        grid-area: happy-time-div-two;
+        grid-template-columns: "1fr 1hr";
+        grid-template-areas:"happy-time-content-bottom happy-time-img-two";
     }
 
     .happy-time-content-bottom{
-        padding: 2rem 2rem;
+        grid-area: happy-time-content-bottom;
+        background-color: rgb(178, 233, 216);
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+    
+    .happy-time-name{
+        color: #112A52;
+        font-weight: bold;
+    }
+    
+    .happy-time-state{
+        font-size: small;
+        color: #112A52;
+    }
+
+    .happy-time-img-two {
+        grid-area: happy-time-img-two;
+        width: 100%;
     }
 
     .subscribe{
@@ -513,6 +597,7 @@ textarea{
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        background-color: rgb(99,230,190,.6);
     }
 
     .nav-item{
@@ -523,14 +608,18 @@ textarea{
         left: 0;
     }
     
-
     .first-section{
-        grid-template-areas: "first-section-img" 
-                            "first-section-content";
+        grid-template-columns: 1fr;
+        grid-template-areas: "first-section-img-container"
+        "first-section-content";
     }
 
+    .first-section-img-container {
+        grid-area: first-section-img-container;
+    }
+
+
     .first-section-img{
-        grid-area: "first-section-img";
         border-radius: 0;
         padding: 0;
     }
@@ -547,18 +636,16 @@ textarea{
 
     .first-section-small-heading{
         font-size: 0.8rem;
-        letter-spacing: normal;
     }
 
     .first-section-content-up{
         font-size: 2rem;
         padding: 1rem 0;
-        line-height: 2.5rem;
-        letter-spacing: normal;
+        line-height: 2rem;
     }
 
     .first-section-content-down{
-        line-height: normal;
+        line-height: 1.3rem;
     }
 
     .first-section-info{
@@ -575,6 +662,10 @@ textarea{
 
     .first-text-content{
         padding-top: 0.5rem;
+    }
+
+    .svg-icon{
+        flex-basis: 4rem;
     }
 
     .card{
@@ -598,17 +689,30 @@ textarea{
         gap: 1rem;
     }
 
-    .happy-time-div{
-        grid-template-areas: "1fr"
-                             "1fr";
-        gap: 1rem;
+    .happy-time{
+        display: grid;
+        grid-template-columns: "1fr";
     }
+    
+    .happy-time-div-one  {
+        grid-template-columns: "1fr";
+        grid-template-areas:"happy-time-img-one"
+                        "happy-time-content";
+        width: 100%;
+    }
+    
+    .happy-time-img-one {
+        grid-area: happy-time-img-one;
+        width: 100%;
+    }
+
 
     .happy-time-content{
         padding: 1rem;
-     }
+        width: 100%;
+    }
 
-     .happy-time-content-text{
+    .happy-time-content-text{
         padding: 1rem 0;
     }
 
@@ -619,6 +723,35 @@ textarea{
 
     .svg-heart{
         padding: 0.5rem;
+    }
+
+    .happy-time-div-two  {
+        grid-area: happy-time-div-two;
+        grid-template-columns: "1fr";
+        grid-template-areas:"happy-time-content-bottom"
+                            "happy-time-img-two";
+    }
+    
+    .happy-time-content-bottom{
+        grid-area: happy-time-content-bottom;
+        background-color: rgb(178, 233, 216);
+        padding: 2rem;
+        width: 100%;
+    }
+    
+    .happy-time-name{
+        color: #112A52;
+        font-weight: bold;
+    }
+    
+    .happy-time-state{
+        font-size: small;
+        color: #112A52;
+    }
+    
+    .happy-time-img-two {
+       grid-area: happy-time-img-two;
+       width: 100%;
     }
 
     .happy-time-content-bottom{
